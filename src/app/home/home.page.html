@@ -1,29 +1,110 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      News
-    </ion-title>
+    <!-- data binding for image -->
+    <img src="https://www.up2dateapp.com/images/logo-main.png">
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      
+      
+      
     </ion-toolbar>
   </ion-header>
+<!-- Uses the Api to fetch latest news from http link -->
+<ion-card>
+  <ion-card-header>
+    <ion-thumbnail item-start><img src=""></ion-thumbnail>
+    <ion-card-subtitle>{{news.category}}</ion-card-subtitle>
+    <ion-card-title>{{news.title}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    {{news.description}}
+  </ion-card-content>
+</ion-card>
 
-  <ul>
+<ion-card>
+  <ion-card-header>
+    <ion-thumbnail item-start><img src=""></ion-thumbnail>
+    <ion-card-subtitle>{{news.category}}</ion-card-subtitle>
+    <ion-card-title>{{news.title}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    {{news.description}}
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    <ion-thumbnail item-start><img src=""></ion-thumbnail>
+    <ion-card-subtitle>{{news.category}}</ion-card-subtitle>
+    <ion-card-title>{{news.title}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    {{news.description}}
+  </ion-card-content>
+</ion-card>
+
+<!-- uses OnInit function -->
+<ion-list>
+  <ion-item *ngFor= "let news of NewsData">
+    <ion-item-group>
+    <img src = "{{news.Image}}">
+
+
+</ion-item-group>
+</ion-item>
+</ion-list>
+
+<ion-button [routerLink]= "['/status']">Set theme</ion-button>
+
+<!-- links to each category -->
+<ion-card>
+  <ion-item href="/weather" class="ion-activated">
+    <ion-icon name="cloud" slot="start"></ion-icon>
+    <ion-label>Weather</ion-label>
+  </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item href="/politics" class="ion-activated">
+      <ion-icon name="globe-outline" slot="start"></ion-icon>
+      <ion-label>Politics</ion-label>
+    </ion-item>
+  </ion-card>
+
+    <ion-card>
+      <ion-item href="/entertainment" class="ion-activated">
+        <ion-icon name="film-outline" slot="start"></ion-icon>
+        <ion-label>Entertainment</ion-label>
+      </ion-item>
+    </ion-card>
+
+      <ion-card>
+        <ion-item href="/science" class="ion-activated">
+          <ion-icon name="flask-outline" slot="start"></ion-icon>
+          <ion-label>Science</ion-label>
+        </ion-item>
+      </ion-card>
+
+        <ion-card>
+          <ion-item href="/business" class="ion-activated">
+            <ion-icon name="bar-chart-outline" slot="start"></ion-icon>
+            <ion-label>Business</ion-label>
+          </ion-item>
+        </ion-card>
+
+  <!-- <ul>
     <li [routerLink]= "['/weather']" routerdirection = "foward" > Weather</li>
     <li [routerLink]= "['/politics']" routerdirection = "foward" > Politics</li>
     <li [routerLink]= "['/entertainment']" routerdirection = "foward" > Entertainment</li>
     <li [routerLink]= "['/science']" routerdirection = "foward" > Science</li>
     <li [routerLink]= "['/business']" routerdirection = "foward" > Business</li>
    
-  </ul>
+  </ul> -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
 </ion-content>

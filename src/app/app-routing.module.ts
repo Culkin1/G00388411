@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'entertainment-categories',
     loadChildren: () => import('./entertainment-categories/entertainment-categories.module').then( m => m.EntertainmentCategoriesPageModule)
   },
+  {
+    path: 'status',
+    loadChildren: () => import('./status/status.module').then( m => m.StatusPageModule)
+  },
 ];
 
 @NgModule({
